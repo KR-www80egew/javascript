@@ -16,14 +16,14 @@
     </div>
 
     <script>
-        let n = ['a', 'b', 'c'];
-        arr = [];
+      let n = ["a", "b", "c"];
+      arr = [];
 
-        for (let i = 1, j = 0; i < 11; i++) {
-            arr.push(i);
-        }
-        console.log(arr);
-      
+      for (let i = 1, j = 0; i < 11; i++) {
+        arr.push(i);
+      }
+      console.log(arr);
+
       arr.forEach(function (e, i) {
         console.log(`${i}번째있는 숫자는 ${e}입니다.`);
       });
@@ -36,10 +36,12 @@
 
       console.log(arr2);
 
-      arr2.forEach(function(i, j) {
-        console.log(`현재 위치의 값은 ${i}이고, ${i}를 3으로 나눴을때 나머지 값은 ${arr2[j] % 3}값 입니다.`);
-      })
-
+      arr2.forEach(function (i, j) {
+        num = arr2[j] % 3;
+        console.log(
+          `현재 위치의 값은 ${i}이고, ${i}를 3으로 나눴을때 나머지 값은 ${num}값 입니다.`
+        );
+      });
     </script>
   </body>
 </html>
