@@ -13,15 +13,16 @@
       //     console.log(`3 * ${i} = ${3 * i}`);
       //   });
 
-      function gugu(num) {
-        for (let i = 1; i < 10; i++) {
+      function gugu(num, num2) {
+        for (let i = 1; i <= num2; i++) {
           console.log(`${num} * ${i} = ${num * i}`);
         }
       }
 
       let dan = prompt("1부터 9까지의 수를 입력하시오 : ");
+      let dan2 = prompt("곱셈을 할 수를 입력하시오 : ");
 
-      gugu(dan);
+      gugu(dan, dan2);
     </script>
   </body>
 </html>
