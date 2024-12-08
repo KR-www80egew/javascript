@@ -7,11 +7,21 @@
   </head>
   <body>
     <script>
-      let gugu = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      //   let gugu = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-      gugu.forEach(function (i, j) {
-        console.log(`3 * ${i} = ${3 * i}`);
-      });
+      //   gugu.forEach(function (i, j) {
+      //     console.log(`3 * ${i} = ${3 * i}`);
+      //   });
+
+      function gugu(num) {
+        for (let i = 1; i < 10; i++) {
+          console.log(`${num} * ${i} = ${num * i}`);
+        }
+      }
+
+      let dan = prompt("1부터 9까지의 수를 입력하시오 : ");
+
+      gugu(dan);
     </script>
   </body>
 </html>
