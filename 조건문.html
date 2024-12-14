@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조건문연습</title>
+  </head>
+  <body>
+    <script>
+      // let arr = [1, 2, 3, 4, 5];
+
+      // arr.forEach(function(i) {
+      //     if(i > 3) {
+      //         console.log(i);
+      //     }
+      //     else if(i === 3) {
+      //         console.log(`숫자 3입니다!`);
+      //     }
+      //     else {
+      //         console.log(`3보다 같거나 작은 숫자 : ${i}`);
+      //     }
+
+      // });
+
+      function age(parameter) {
+        if (parameter >= 19) {
+          alert(`성인입니다.`);
+        } else {
+          alert(`미성년자입니다.`);
+        }
+      }
+
+      let parameter = prompt("나이입력");
+      age(parameter);
+    </script>
+  </body>
+</html>
