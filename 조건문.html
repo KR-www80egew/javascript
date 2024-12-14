@@ -22,15 +22,18 @@
 
       // });
 
+      let parameter = prompt("나이입력");
+
       function age(parameter) {
         if (parameter >= 19) {
           alert(`성인입니다.`);
-        } else {
+        } else if (parameter == 15) {
+          alert(`반갑습니다!`);
+        } else if (parameter <= 18 && parameter != 15) {
           alert(`미성년자입니다.`);
         }
       }
 
-      let parameter = prompt("나이입력");
       age(parameter);
     </script>
   </body>
