@@ -12,10 +12,10 @@
       <h1 id="h1">타이틀 입니다3</h1>
       <h1 id="h1">타이틀 입니다4</h1>
       <h1>타이틀 입니다5</h1>
-      <button>왼쪽</button>
-      <button>오른쪽</button>
-      <button>위</button>
-      <button>아래</button>
+      <button>동쪽</button>
+      <button>북쪽</button>
+      <button>남쪽</button>
+      <button>서쪽</button>
     </div>
     <script>
       let btn = document.querySelectorAll("button");
@@ -60,15 +60,17 @@
         // }
 
         e.addEventListener("click", function () {
-          if (i === 0) {
-            alert("왼쪽 버튼입니다.");
-          } else if (i === 1) {
-            alert("오른쪽 버튼입니다.");
-          } else if (i === 2) {
-            alert("위쪽 버튼입니다.");
-          } else if (i === 3) {
-            alert("아래쪽 버튼입니다.");
-          }
+          alert(`${e.innerText} 버튼입니다.`);
+          // if (i === 0) {
+          //   alert("동쪽 버튼입니다.");
+          // } else if (i === 1) {
+          //   alert("북쪽 버튼입니다.");
+          // } else if (i === 2) {
+          //   alert("남쪽 버튼입니다.");
+          // } else if (i === 3) {
+          //   alert("서쪽 버튼입니다.");
+          // }
+          // console.log(e.innerText);
         });
       });
     </script>
