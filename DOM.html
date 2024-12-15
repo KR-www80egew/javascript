@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="h1">타이틀 입니다</h1>
+      <h1 id="h1">타이틀 입니다2</h1>
+      <h1 id="h1">타이틀 입니다3</h1>
+      <h1 id="h1">타이틀 입니다4</h1>
+      <h1>타이틀 입니다5</h1>
+      <button>왼쪽</button>
+      <button>오른쪽</button>
+      <button>위</button>
+      <button>아래</button>
+    </div>
+    <script>
+      let btn = document.querySelectorAll("button");
+
+      // for (let i = 0; i < btn.length; i++) {
+      //   if (i === 0) {
+      //     btn[i].addEventListener("click", function () {
+      //       alert("왼쪽 버튼입니다!");
+      //     });
+      //   } else if (i === 1) {
+      //     btn[i].addEventListener("click", function () {
+      //       alert("오른쪽 버튼입니다!");
+      //     });
+      //   } else if (i === 2) {
+      //     btn[i].addEventListener("click", function () {
+      //       alert("위쪽 버튼입니다!");
+      //     });
+      //   } else if (i === 3) {
+      //     btn[i].addEventListener("click", function () {
+      //       alert("아래쪽 버튼입니다!");
+      //     });
+      //   }
+      // }
+
+      btn.forEach(function (e, i) {
+        if (i === 0) {
+          btn[i].addEventListener("click", function () {
+            alert("왼쪽 버튼입니다!");
+          });
+        } else if (i === 1) {
+          btn[i].addEventListener("click", function () {
+            alert("오른쪽 버튼입니다!");
+          });
+        } else if (i === 2) {
+          btn[i].addEventListener("click", function () {
+            alert("위쪽 버튼입니다!");
+          });
+        } else if (i === 3) {
+          btn[i].addEventListener("click", function () {
+            alert("아래쪽 버튼입니다!");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
