@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM2</title>
+  </head>
+  <body>
+    <div>
+      <button data-value="빨강" style="background-color: red">red</button>
+      <button data-value="노랑" style="background-color: yellow">yellow</button>
+      <button data-value="초록" style="background-color: green">green</button>
+    </div>
+
+    <script>
+      let color = document.querySelectorAll("button");
+
+      color.forEach(function (e, i) {
+        e.addEventListener("click", function () {
+          alert(`${e.getAttribute("data-value")}입니다.`);
+        });
+      });
+    </script>
+  </body>
+</html>
