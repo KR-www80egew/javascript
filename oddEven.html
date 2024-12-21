@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Odd or Even Game</title>
+    <title>홀짝 게임</title>
 
     <style>
       /* General Reset */
@@ -26,6 +26,9 @@
         text-align: center;
         max-width: 400px;
         width: 90%;
+      }
+      .game-container.err {
+        animation: swing 0.1s 5 forwards;
       }
 
       /* Title */
@@ -78,6 +81,21 @@
         margin: 0;
         font-weight: bold;
       }
+
+      @keyframes swing {
+        0% {
+          transform: rotate(0deg);
+        }
+        40% {
+          transform: rotate(10deg);
+        }
+        80% {
+          transform: rotate(-10deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
     </style>
   </head>
 
@@ -102,38 +120,35 @@
     <script>
       let btn = document.querySelectorAll(".buttons button");
       let msg = document.querySelector(".result-message");
-      // 기준숫자! : 랜덤
-      let random = Math.floor(Math.random() * 10) + 1;
-      let oddEven = "";
+      let game = document.querySelector(".game-container");
 
-      // 랜덤 숫자의 홀짝 확인
-      if (random % 2 === 0) {
-        oddEven = "짝수";
-      } else {
-        oddEven = "홀수";
+      let oddEven = "";
+      let random = Math.floor(Math.random() * 10) + 1;
+
+      function ranNum() {
+        random = Math.floor(Math.random() * 10) + 1;
+        // 랜덤 숫자의 홀짝 확인
+        if (random % 2 === 0) {
+          oddEven = "짝수";
+        } else {
+          oddEven = "홀수";
+        }
       }
 
       console.log(random);
 
       btn.forEach(function (e) {
         e.addEventListener("click", function () {
-          // alert안에 클릭한 버튼의 내용안에있는 텍스트를 가져와서 띄워보세요!
-          //   alert(`${e.innerText}`);
-          // 클릭한 버튼 내의 텍스트와, 랜덤 숫자의 홀/짝 카테고리가 맞으면
-          // 정답입니다! 를 alert로, 아니라면 오랍입니다! 를 alert로 띄울수 있게 만들어보세요
-
           if (e.innerText === oddEven) {
             msg.innerText = "정답입니다!";
           } else {
             msg.innerText = "오답입니다!";
-            random = Math.floor(Math.random() * 10) + 1;
 
-            // 재설정한 랜덤 숫자의 홀짝 확인
-            if (random % 2 === 0) {
-              oddEven = "짝수";
-            } else {
-              oddEven = "홀수";
-            }
+            ranNum();
+            game.className = "game-container err";
+            setTimeout(function () {
+              game.className = "game-container";
+            }, 500);
           }
           console.log(random);
         });
