@@ -96,11 +96,21 @@
           transform: rotate(0deg);
         }
       }
+
+      img {
+        width: 100%;
+        display: none;
+      }
+
+      img.show {
+        display: block;
+      }
     </style>
   </head>
 
   <body>
     <div class="game-container">
+      <img src="./unnamed.gif" alt="" />
       <h1>홀수일까? 짝수일까?</h1>
 
       <p class="instructions">
@@ -121,6 +131,7 @@
       let btn = document.querySelectorAll(".buttons button");
       let msg = document.querySelector(".result-message");
       let game = document.querySelector(".game-container");
+      let img = document.querySelector("img");
 
       let oddEven = "";
       let random = Math.floor(Math.random() * 10) + 1;
@@ -141,8 +152,10 @@
         e.addEventListener("click", function () {
           if (e.innerText === oddEven) {
             msg.innerText = "정답입니다!";
+            img.className = "show";
           } else {
             msg.innerText = "오답입니다!";
+            img.className = "";
 
             ranNum();
             game.className = "game-container err";
