@@ -13,8 +13,10 @@
     <script>
       let ul = document.querySelector("ul");
       let li = document.querySelector("li");
-      for (let i = 0; i < 11; i++) {
+      for (let i = 2; i < 11; i++) {
         let liClone = li.cloneNode(true);
+        liClone.innerText = `리스트${i}`;
+
         ul.append(liClone);
         console.log(liClone);
       }
