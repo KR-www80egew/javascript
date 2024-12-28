@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>append 연습</title>
+  </head>
+  <body>
+    <ul>
+      <li>리스트1</li>
+    </ul>
+
+    <script>
+      let ul = document.querySelector("ul");
+      let li = document.querySelector("li");
+      for (let i = 0; i < 11; i++) {
+        let liClone = li.cloneNode(true);
+        ul.append(liClone);
+        console.log(liClone);
+      }
+    </script>
+  </body>
+</html>
