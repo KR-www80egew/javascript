@@ -97,8 +97,11 @@
       btn.forEach(function (e) {
         e.addEventListener("click", function () {
           let now = e.innerText;
-          if (isNaN(now) == false) {
-            dom.value += now;
+          if (!isNaN(now)) {
+            dom.value += now * 1;
+            dom.value = dom.value * 1;
+          } else {
+            dom.value = 0;
           }
 
           console.log(isNaN(now));
