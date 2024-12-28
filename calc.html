@@ -93,6 +93,10 @@
     <script>
       let btn = document.querySelectorAll("button");
       let dom = document.querySelector(".display");
+      let count = 0;
+      let opt = false;
+      let frevOpt = false;
+      let sum = 0;
 
       btn.forEach(function (e) {
         e.addEventListener("click", function () {
@@ -100,11 +104,17 @@
           if (!isNaN(now)) {
             dom.value += now * 1;
             dom.value = dom.value * 1;
-          } else {
+          } else if (e.innerText === "clear") {
             dom.value = 0;
-          }
+          } else {
+            sum = count;
+            prevOpt = opt;
+            count = dom.value;
+            dom.value = e.innerText;
+            opt = now;
 
-          console.log(isNaN(now));
+            console.log(`${prevOpt} 입니다.`);
+          }
         });
       });
     </script>
