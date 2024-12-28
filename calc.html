@@ -113,7 +113,16 @@
             dom.value = e.innerText;
             opt = now;
 
-            console.log(`${prevOpt} 입니다.`);
+            switch (prevOpt) {
+              case "+":
+                console.log("+ 입니다.");
+              case "-":
+                console.log("- 입니다.");
+              case "*":
+                console.log("* 입니다.");
+              case "/":
+                console.log("/ 입니다.");
+            }
           }
         });
       });
