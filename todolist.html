@@ -171,11 +171,26 @@
     <script>
       const input = document.querySelector("input");
       let add = document.querySelector(".addTaskBtn");
+      let todo = document.querySelector(".todo-item");
       input.addEventListener("input", function () {
         add.className = "addTaskBtn";
         if (this.value === "") {
-          add.className = "disabled-btn";
+          add.className = "addTaskBtn disabled-btn";
+        } else {
+          add.className = "addTaskBtn";
         }
+      });
+
+      add.addEventListener("click", function () {
+        const item = todo.cloneNode(true);
+        item.querySelector("span").innerText = input.value;
+        todo.append(item);
+        const btnSm = item.querySelector("button");
+        btnSm.addEventListener("click", function () {
+          this.parentElement.remove();
+        });
+        input.value = "";
+        add.className = "addTaskBtn disabled-btn";
       });
     </script>
   </body>
